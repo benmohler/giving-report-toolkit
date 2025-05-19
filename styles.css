@@ -233,3 +233,19 @@ h1, h2 {
     font-size: 2rem;
   }
 }
+
+.credibility-bar {
+  background: #eef2f6;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-top: 2px solid #ccd9e3;
+  border-bottom: 2px solid #ccd9e3;
+  color: #1c1e21;
+}
+.credibility-bar::before {
+  content: "★ ";
+  font-size: 1.5rem;
+  color: #004aad;
+}
