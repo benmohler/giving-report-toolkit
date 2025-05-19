@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const icon = document.createElement("span");
     icon.classList.add("faq-toggle");
+    icon.setAttribute("aria-hidden", "true");
     icon.textContent = "+";
     question.appendChild(icon);
 
@@ -21,14 +22,50 @@ document.addEventListener("DOMContentLoaded", () => {
     answerContainer.style.transition = "max-height 0.4s ease";
 
     question.style.cursor = "pointer";
-    question.addEventListener("click", () => {
+    question.setAttribute("tabindex", "0");
+    question.setAttribute("role", "button");
+    question.setAttribute("aria-expanded", "false");
+
+    const toggleFAQ = () => {
       const isOpen = item.classList.contains("open");
       item.classList.toggle("open");
       icon.textContent = isOpen ? "+" : "−";
       answerContainer.style.maxHeight = isOpen ? "0px" : answerContainer.scrollHeight + "px";
+      question.setAttribute("aria-expanded", String(!isOpen));
+    };
+
+    question.addEventListener("click", toggleFAQ);
+    question.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleFAQ();
+      }
     });
   });
 
+  // Helper: Staggered observer function
+  function staggerObserver(selector, className) {
+    const targets = document.querySelectorAll(selector);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add(className);
+          }, index * 100);
+        } else {
+          entry.target.classList.remove(className); // Reset on scroll out
+        }
+      });
+    }, { threshold: 0.1 });
+
+    targets.forEach(el => observer.observe(el));
+  }
+
+  staggerObserver(".cta-button", "visible");
+  staggerObserver(".testimonial-card", "visible");
+  staggerObserver(".pain-item", "visible");
+});
+  
   // CTA Button scroll animation
   const ctaButtons = document.querySelectorAll(".cta-button");
   const observer = new IntersectionObserver(entries => {
