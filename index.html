@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,98 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Giving Report Toolkit</title>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Giving Report Toolkit</h1>
-    <p class="tagline">Transforming Fundraising Data into Donor Action</p>
-    <a href="#purchase" class="cta-button">Buy Now</a>
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Giving Report Toolkit</h1>
+      <p>Turn nonprofit fundraising data into strategy, clarity, and action.</p>
+      <a href="#purchase" class="cta-button">Buy Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://via.placeholder.com/500x300?text=Toolkit+Preview" alt="Toolkit preview" />
+    </div>
   </header>
-
   <section class="problem-solution">
-    <h2>For Nonprofits, Data Isn’t the Problem—It’s the Opportunity</h2>
-    <p>Fundraisers are overwhelmed by data but underwhelmed by insights. The Giving Report Toolkit changes that by transforming your donor file into a strategic fundraising engine.</p>
+    <h2>Data Overload. Insight Deficit.</h2>
+    <p>Fundraisers have more data than ever—but less clarity. The Giving Report Toolkit cuts through the noise, giving your team targeted insights and actionable plans.</p>
   </section>
-
   <section class="toolkit-breakdown">
-    <h2>What’s Inside the Toolkit?</h2>
-    <div class="toolkit-item">
-      <h3>Insight Report</h3>
-      <p>A deep-dive into 10 years of fundraising patterns—pinpointing what’s working and where to grow.</p>
-    </div>
-    <div class="toolkit-item">
-      <h3>Action Workbook</h3>
-      <p>A plug-and-play tool to help teams turn insights into campaigns, stewardship moves, and fundraising plans.</p>
-    </div>
-    <div class="toolkit-item">
-      <h3>Action Lists</h3>
-      <p>Pre-segmented, donor-ready lists for reactivation, major gifts, monthly giving, and more.</p>
-    </div>
-    <div class="toolkit-item">
-      <h3>Executive Insight Deck</h3>
-      <p>A polished slide deck designed for board and leadership—turning data into understanding and buy-in.</p>
-    </div>
-    <div class="toolkit-item">
-      <h3>Strategy Guide</h3>
-      <p>Expert guidance that translates trends into clear next steps for your development strategy.</p>
+    <h2>What’s Inside</h2>
+    <div class="grid">
+      <div class="card"><h3>Insight Report</h3><p>Analyze 10 years of giving trends. See patterns others miss.</p></div>
+      <div class="card"><h3>Action Workbook</h3><p>Translate insights into stewardship moves, campaigns, and appeals.</p></div>
+      <div class="card"><h3>Action Lists</h3><p>Ready-to-use donor segments: lapsed, major gift, reactivation, and more.</p></div>
+      <div class="card"><h3>Executive Deck</h3><p>Board-ready slide deck that builds clarity, confidence, and buy-in.</p></div>
+      <div class="card"><h3>Strategy Guide</h3><p>Expert guidance that transforms insight into action.</p></div>
     </div>
   </section>
-
-  <section class="impact">
-    <h2>How It Helps</h2>
-    <ul>
-      <li>Identify major donor prospects in seconds</li>
-      <li>Pinpoint lapsed donors most likely to return</li>
-      <li>Activate monthly giving with donor-level precision</li>
-      <li>Visualize 10 years of giving behavior—instantly</li>
-      <li>Align staff and board with data-driven priorities</li>
-    </ul>
-  </section>
-
   <section class="testimonials">
     <h2>What Our Clients Say</h2>
-    <blockquote>
-      “The Giving Report Toolkit gave us insights we didn’t even know we needed. We activated a second gift strategy within a week.”
-      <footer>— Director of Advancement, Midwestern University</footer>
-    </blockquote>
-    <blockquote>
-      “I brought the Executive Deck to our board meeting. The conversation shifted from confusion to clarity.”
-      <footer>— VP of Development, Regional Nonprofit</footer>
-    </blockquote>
-    <div class="client-logos">
-      <img src="logos/org1.png" alt="Org 1 Logo" />
-      <img src="logos/org2.png" alt="Org 2 Logo" />
-      <img src="logos/org3.png" alt="Org 3 Logo" />
-    </div>
+    <blockquote>“The Toolkit gave us clarity we didn’t know we were missing.”<footer>– Advancement Director</footer></blockquote>
+    <blockquote>“Our board finally gets the big picture. Game changer.”<footer>– VP of Development</footer></blockquote>
   </section>
-
   <section id="purchase" class="purchase-section">
-    <h2>Get the Toolkit</h2>
-    <p>The Giving Report Toolkit is available now for a one-time fee. You'll receive all components, including full documentation and strategic onboarding support.</p>
+    <h2>Ready to Get Started?</h2>
+    <p>One-time fee: $4,995. Optional subsets available at $895 each.</p>
     <a href="#" class="cta-button">Buy Now</a>
-    <p class="note">Payment processing coming soon. Contact us if you need a purchase order or invoice.</p>
-    <p class="invoice-option">
-      Prefer to pay by invoice? <a href="GivingReportToolkit-InvoiceRequest.pdf" target="_blank" download>Download Invoice Request Form</a>
-    </p>
-
+    <p class="note">Need an invoice? <a href="GivingReportToolkit-InvoiceRequest.pdf" download>Download Invoice Request Form</a></p>
     <form class="contact-form" action="#" method="POST" data-crm="placeholder">
       <h3>Request an Invoice or Ask a Question</h3>
       <input type="hidden" name="form_type" value="Toolkit Contact" />
       <input type="hidden" name="source_page" value="giving-report-toolkit" />
-
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" required />
-
       <label for="email">Your Email</label>
       <input type="email" id="email" name="email" required />
-
       <label for="message">Your Message</label>
       <textarea id="message" name="message" rows="5" required></textarea>
-
       <button type="submit">Send Message</button>
     </form>
   </section>
-
   <footer>
     <p>© 2025 GivingThree | A TRUGIV Product</p>
   </footer>
