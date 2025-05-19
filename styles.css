@@ -4,93 +4,98 @@
   margin: 0;
   padding: 0;
 }
-
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
   line-height: 1.6;
-  background-color: #fefefe;
-  color: #333;
-  padding: 0 1rem;
 }
-
-header {
-  background: #0074cc;
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #1b1f3b;
 }
-
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 5%;
+  background: #ffffff;
+  flex-wrap: wrap;
 }
-
-.tagline {
-  font-size: 1.25rem;
+.hero-text {
+  flex: 1;
+  padding-right: 2rem;
+}
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
-
-.cta-button {
-  display: inline-block;
-  background-color: #ffc107;
-  color: #000;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #e0a800;
-}
-
-section {
-  margin: 2rem auto;
-  max-width: 800px;
-  padding: 1rem;
-}
-
-.toolkit-breakdown {
-  background: #f5f5f5;
-  padding: 2rem 1rem;
+.hero-image img {
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
 }
-
-.toolkit-item {
-  margin-bottom: 1.5rem;
+.cta-button {
+  display: inline-block;
+  background-color: #004aad;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
-
-.impact ul {
-  list-style: disc inside;
-  padding-left: 1rem;
+.cta-button:hover {
+  background-color: #003a88;
 }
-
-.purchase-section {
+section {
+  padding: 3rem 5%;
+  max-width: 1000px;
+  margin: auto;
+}
+.problem-solution, .testimonials {
   text-align: center;
 }
-
-.note {
-  font-size: 0.9rem;
-  margin-top: 1rem;
-  color: #777;
+.toolkit-breakdown .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
-
-.invoice-option {
-  margin-top: 1.5rem;
-  font-size: 1rem;
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
-
-.invoice-option a {
-  color: #0074cc;
+.testimonials blockquote {
+  margin: 1.5rem auto;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+.testimonials footer {
+  margin-top: 0.5rem;
   font-weight: bold;
-  text-decoration: underline;
+  font-size: 0.95rem;
+  color: #555;
 }
-
-.invoice-option a:hover {
-  color: #005fa3;
+.purchase-section {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
-
+.note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
 .contact-form {
   margin-top: 2rem;
   text-align: left;
@@ -98,19 +103,12 @@ section {
   margin-left: auto;
   margin-right: auto;
 }
-
-.contact-form h3 {
-  margin-bottom: 1rem;
-  color: #0074cc;
-}
-
 .contact-form label {
   display: block;
   margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
 }
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -119,70 +117,22 @@ section {
   border-radius: 5px;
   font-size: 1rem;
 }
-
 .contact-form button {
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
-  background-color: #0074cc;
+  background-color: #004aad;
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
 }
-
 .contact-form button:hover {
-  background-color: #005fa3;
+  background-color: #003a88;
 }
-
-.testimonials {
-  background-color: #f9f9f9;
-  padding: 2rem 1rem;
-  border-radius: 8px;
-  max-width: 800px;
-  margin: 0 auto 2rem auto;
-  text-align: center;
-}
-
-.testimonials blockquote {
-  font-style: italic;
-  margin: 1.5rem auto;
-  max-width: 600px;
-  position: relative;
-}
-
-.testimonials footer {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.client-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.client-logos img {
-  height: 40px;
-  max-width: 120px;
-  object-fit: contain;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.client-logos img:hover {
-  opacity: 1;
-}
-
 footer {
   text-align: center;
   font-size: 0.9rem;
-  padding: 1rem;
+  padding: 2rem 1rem;
   background: #f0f0f0;
-  margin-top: 2rem;
 }
