@@ -9,6 +9,7 @@ body {
   background: #ffffff;
   color: #111;
   line-height: 1.6;
+  font-size: 1.1rem;
 }
 h1, h2 {
   font-family: 'DM Serif Display', serif;
@@ -18,16 +19,24 @@ h1, h2 {
 .hero {
   padding: 6rem 5%;
   text-align: center;
-  background: #f5f7fa;
+  background: #f4f5f7;
 }
-.hero-content h1 {
-  font-size: 3rem;
-  max-width: 900px;
-  margin: 0 auto 1rem;
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
 }
-.hero-content p {
-  font-size: 1.25rem;
+.hero p {
+  font-size: 1.5rem;
   margin-bottom: 2rem;
+}
+.hero-graphic {
+  width: 100%;
+  height: 200px;
+  background: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
 }
 .cta-buttons {
   display: flex;
@@ -49,83 +58,69 @@ h1, h2 {
   color: #004aad;
 }
 .section {
-  padding: 6rem 5%;
+  padding: 5rem 5%;
+}
+.shaded {
+  background: #f9f9f9;
+}
+.statement {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-.section p, .section ul, .section .faq-item {
-  max-width: 800px;
-  margin: 0 auto 1.5rem;
-  font-size: 1.1rem;
-}
-.feature-grid {
+.feature-grid, .pain-grid, .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
-.feature-block {
+.feature-block, .pain-item {
   padding: 2rem;
   background: #e0e7ef;
   border-radius: 10px;
-  font-weight: bold;
 }
-.immediate-value ul, .long-term ul {
-  list-style: none;
-  padding: 0;
+.long-term ul, .section ul {
+  max-width: 800px;
+  margin: 0 auto;
+  list-style: disc;
+  padding-left: 1.25rem;
 }
-.immediate-value li, .long-term li {
-  padding: 0.75rem 0;
-}
-.pain-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.pain-item {
-  background: #f3f3f3;
+.testimonial-card {
+  text-align: center;
   padding: 2rem;
-  border-radius: 8px;
-  text-align: left;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
 }
-.testimonial-wireframes {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+.headshot-placeholder {
+  width: 60px;
+  height: 60px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
 }
-.testimonial-box {
-  width: 300px;
-  height: 220px;
-  background: #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
+blockquote {
+  font-style: italic;
+  margin-bottom: 1rem;
 }
 .faq-item {
-  text-align: left;
-  margin-bottom: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
 }
 .purchase p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 .contact-form {
-  margin-top: 2rem;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 600px;
+  margin: 2rem auto 0;
 }
 .contact-form input,
 .contact-form textarea {
   width: 100%;
+  padding: 0.75rem;
   margin-bottom: 1rem;
-  padding: 0.75rem 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
@@ -139,7 +134,15 @@ h1, h2 {
 }
 .footer {
   text-align: center;
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
   font-size: 0.9rem;
-  color: #666;
+  background: #f4f5f7;
+}
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .statement {
+    font-size: 1.8rem;
+  }
 }
