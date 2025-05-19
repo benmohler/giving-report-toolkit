@@ -173,13 +173,6 @@ blockquote {
 }
 
 
-.feature-block {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.feature-block:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-}
 .feature-icon {
   transition: background 0.3s ease, transform 0.3s ease;
 }
@@ -213,9 +206,7 @@ blockquote {
 }
 .faq-item:hover {
   background-color: #f1f5fb;
-  transform: scale(1.02);
   border-radius: 8px;
-  padding: 1.5rem;
 }
 
 
