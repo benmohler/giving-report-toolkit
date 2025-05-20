@@ -1,3 +1,4 @@
+// script.js
 
 document.addEventListener("DOMContentLoaded", () => {
   const faqItems = document.querySelectorAll(".faq-item");
@@ -44,59 +45,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Helper: Staggered observer function
-  function staggerObserver(selector, className) {
-    const targets = document.querySelectorAll(selector);
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add(className);
-          }, index * 100);
-        } else {
-          entry.target.classList.remove(className); // Reset on scroll out
-        }
+  // Helper: Scroll-trigger animation observer
+  function observeFadeIn(selector) {
+  const elements = document.querySelectorAll(selector);
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("visible");
+        }, index * 100);
+      } else {
+        entry.target.classList.remove("visible");
+      }
+    });
+  }, { threshold: 0.1 });
+  elements.forEach(el => observer.observe(el));
+}
       });
     }, { threshold: 0.1 });
-
-    targets.forEach(el => observer.observe(el));
+    elements.forEach(el => observer.observe(el));
   }
 
-  staggerObserver(".cta-button", "visible");
-  staggerObserver(".testimonial-card", "visible");
-  staggerObserver(".pain-item", "visible");
-});
-  
-  // CTA Button scroll animation
-  const ctaButtons = document.querySelectorAll(".cta-button");
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.1 });
-  ctaButtons.forEach(btn => observer.observe(btn));
-
-  // Testimonial scroll-in animation
-  const testimonialCards = document.querySelectorAll(".testimonial-card");
-  const testimonialObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.1 });
-  testimonialCards.forEach(card => testimonialObserver.observe(card));
-
-  // Pain Points scroll-in animation
-  const painItems = document.querySelectorAll(".pain-item");
-  const painObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.1 });
-  painItems.forEach(item => painObserver.observe(item));
+  // Apply scroll animations to all key UI sections
+  observeFadeIn(".cta-button");
+  observeFadeIn(".testimonial-card");
+  observeFadeIn(".pain-item");
+  observeFadeIn(".feature-block");
+  observeFadeIn(".checklist-centered li");
+  observeFadeIn(".faq-item");
 });
