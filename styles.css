@@ -1,18 +1,8 @@
-/* styles.css */
-
-/* Universal */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
-.visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
-/* Typography & Layout */
 body {
   font-family: 'Inter', sans-serif;
   background: #ffffff;
@@ -20,45 +10,24 @@ body {
   line-height: 1.7;
   font-size: 1.15rem;
 }
-
 h1, h2 {
   font-family: 'DM Serif Display', serif;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
 }
-
-.statement {
-  font-size: 2.75rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.section {
-  padding: 5rem 5%;
-}
-
-.shaded {
-  background: #f9f9f9;
-}
-
 .hero {
   padding: 6rem 5%;
   text-align: center;
   background: #f4f5f7;
 }
-
 .hero h1 {
   font-size: 4rem;
   margin-bottom: 1rem;
 }
-
 .hero p {
   font-size: 1.75rem;
   margin-bottom: 2rem;
 }
-
 .hero-graphic {
   width: 100%;
   height: 200px;
@@ -68,15 +37,12 @@ h1, h2 {
   justify-content: center;
   margin-top: 2rem;
 }
-
 .cta-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2rem;
 }
-
 .cta-button {
   background: #004aad;
   color: white;
@@ -89,50 +55,33 @@ h1, h2 {
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
+.cta-button.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 .cta-button.outline {
   background: transparent;
   border: 2px solid #004aad;
   color: #004aad;
 }
-
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+.section {
+  padding: 5rem 5%;
 }
-
-.testimonial-card {
-  background: white;
-  padding: 2rem;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+.shaded {
+  background: #f9f9f9;
+}
+.statement {
+  font-size: 2.75rem;
+  font-weight: 700;
   text-align: center;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  margin-bottom: 1.5rem;
 }
-
-.headshot-placeholder {
-  width: 120px;
-  height: 120px;
-  background: #ccc;
-  border-radius: 50%;
-  margin: 0 auto 1rem;
-  transition: transform 0.4s ease;
-}
-
-.testimonial-card.visible .headshot-placeholder {
-  transform: scale(1.1);
-}
-
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
 }
-
 .feature-block {
   display: flex;
   flex-direction: column;
@@ -141,38 +90,32 @@ h1, h2 {
   background: #e0e7ef;
   border-radius: 10px;
   text-align: center;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .feature-icon {
   width: 60px;
   height: 60px;
   background: #bbb;
   border-radius: 50%;
-  margin: 0 auto 1rem;
+  margin-bottom: 1rem;
 }
-
 .feature-desc {
   font-size: 1.1rem;
   margin-top: 0.5rem;
 }
-
-.checklist-centered {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-.checklist-centered li {
-  margin: 1rem 0;
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
   font-size: 1.15rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  max-width: 960px;
+  margin: 0 auto;
 }
-
+.checklist-item {
+  background: #f1f5fb;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
 .pain-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -180,7 +123,6 @@ h1, h2 {
   max-width: 1024px;
   margin: 2rem auto 0 auto;
 }
-
 .pain-item {
   padding: 3rem;
   line-height: 1.8;
@@ -192,7 +134,41 @@ h1, h2 {
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
+.pain-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.testimonial-card {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  min-height: 300px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.testimonial-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.headshot-placeholder {
+  width: 120px;
+  height: 120px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  transition: transform 0.4s ease;
+}
+.testimonial-card.visible .headshot-placeholder {
+  transform: scale(1.1);
+}
 .faq-item {
   max-width: 800px;
   margin: 2rem auto;
@@ -200,15 +176,10 @@ h1, h2 {
   padding: 1.5rem;
   border-radius: 8px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
 .faq-item:hover {
   background-color: #f1f5fb;
 }
-
 .faq-toggle {
   float: right;
   font-size: 1.5rem;
@@ -216,23 +187,19 @@ h1, h2 {
   margin-left: 1rem;
   transition: transform 0.3s ease;
 }
-
 .faq-item.open .faq-toggle {
   transform: rotate(45deg);
   color: #004aad;
 }
-
 .purchase p {
   font-size: 1.3rem;
   text-align: center;
   margin-bottom: 2rem;
 }
-
 .contact-form {
   max-width: 600px;
   margin: 2rem auto 0;
 }
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -242,7 +209,6 @@ h1, h2 {
   border-radius: 6px;
   font-size: 1.1rem;
 }
-
 .contact-form button {
   background: #004aad;
   color: white;
@@ -252,24 +218,6 @@ h1, h2 {
   font-size: 1.1rem;
   cursor: pointer;
 }
-
-.credibility-bar {
-  background: #eef2f6;
-  padding: 2rem;
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: 600;
-  border-top: 2px solid #ccd9e3;
-  border-bottom: 2px solid #ccd9e3;
-  color: #1c1e21;
-}
-
-.credibility-bar::before {
-  content: "★ ";
-  font-size: 1.5rem;
-  color: #004aad;
-}
-
 .footer {
   text-align: center;
   padding: 3rem 1rem;
@@ -277,7 +225,6 @@ h1, h2 {
   background: #f4f5f7;
   color: #555;
 }
-
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.4rem;
