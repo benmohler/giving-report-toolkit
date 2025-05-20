@@ -45,22 +45,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Helper: Scroll-trigger animation observer
+  // Helper: Scroll-trigger animation observer with true index-based staggering
   function observeFadeIn(selector) {
-  const elements = document.querySelectorAll(selector);
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add("visible");
-        }, index * 100);
-      } else {
-        entry.target.classList.remove("visible");
-      }
-    });
-  }, { threshold: 0.1 });
-  elements.forEach(el => observer.observe(el));
-}
+    const elements = document.querySelectorAll(selector);
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const target = entry.target;
+        const index = Array.from(elements).indexOf(target);
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            target.classList.add("visible");
+          }, index * 100);
+        } else {
+          target.classList.remove("visible");
+        }
       });
     }, { threshold: 0.1 });
     elements.forEach(el => observer.observe(el));
