@@ -1,11 +1,18 @@
 /* styles.css */
 
+/* Universal */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Typography & Layout */
 body {
   font-family: 'Inter', sans-serif;
   background: #ffffff;
@@ -26,11 +33,6 @@ h1, h2 {
   font-weight: 700;
   text-align: center;
   margin-bottom: 1.5rem;
-}
-
-h2.statement {
-  font-size: 2.75rem;
-  text-align: center;
 }
 
 .section {
@@ -88,11 +90,6 @@ h2.statement {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.cta-button.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .cta-button.outline {
   background: transparent;
   border: 2px solid #004aad;
@@ -114,11 +111,6 @@ h2.statement {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.testimonial-card.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .headshot-placeholder {
@@ -149,6 +141,9 @@ h2.statement {
   background: #e0e7ef;
   border-radius: 10px;
   text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .feature-icon {
@@ -173,6 +168,9 @@ h2.statement {
 .checklist-centered li {
   margin: 1rem 0;
   font-size: 1.15rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .pain-grid {
@@ -195,11 +193,6 @@ h2.statement {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.pain-item.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .faq-item {
   max-width: 800px;
   margin: 2rem auto;
@@ -207,6 +200,9 @@ h2.statement {
   padding: 1.5rem;
   border-radius: 8px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .faq-item:hover {
